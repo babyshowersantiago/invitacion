@@ -161,3 +161,6 @@ label.op input { accent-color: var(--cafe); width: 20px; height: 20px; margin: 0
   transition: left 1s cubic-bezier(.6, 0, .2, 1), top 1s cubic-bezier(.6, 0, .2, 1), width 1s cubic-bezier(.6, 0, .2, 1), height 1s cubic-bezier(.6, 0, .2, 1), border-radius 1s; }
 #intro.agrandando .escena > img { opacity: 0; transition: opacity .5s ease; }
 #intro.agrandando .pagina { overflow: visible; }
+
+/* Registro en el listado privado */
+.m-botones[hidden],.registro-cantidad[hidden],.registro-alternativo[hidden]{display:none!important}.registro-cantidad{margin:18px 0}.registro-cantidad input{width:100%;padding:12px;border:1px solid #ddcfb3;border-radius:12px;font:inherit;color:inherit;background:white}.registro-guardar{display:block;width:100%;min-height:50px;border:0;border-radius:25px;background:#ffe88d;color:#6b4f36;font:inherit;cursor:pointer;margin:14px 0}.registro-guardar:disabled{opacity:.7;cursor:default}.registro-estado{font-size:15px;line-height:1.5;color:#6b4f36}.registro-alternativo{display:block;text-align:center;margin:12px 0;color:#527849}.registro-trampa{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important}.registro-guardar:focus-visible{outline:3px solid #7fa6be;outline-offset:3px}

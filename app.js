@@ -193,6 +193,7 @@
     form.querySelector('.m-botones').appendChild(b);
   }
   function enviar(quien, numero) {
+    if (!window.RegistroAsistencia?.isSaved()) { error.textContent = 'Primero guarda tu respuesta en el listado.'; return; }
     const nombre = form.nombre.value.trim(), op = form.asiste.value;
     if (nombre.length < 2) { error.textContent = 'Escribe tu nombre, por favor.'; form.nombre.focus(); return; }
     if (!op) { error.textContent = 'Cuéntanos si podrás acompañarnos.'; return; }
@@ -200,8 +201,10 @@
     const txt = op === 'si'
       ? '¡Hola ' + quien + '! 🐝 Soy *' + nombre + '* y confirmo que *sí asistiré* al Baby Shower de Santiago 🍯\n📅 Sábado 12 de diciembre, 17:00 hrs.\n📍 El Roble #2171, Concepción.'
       : '¡Hola ' + quien + '! Soy *' + nombre + '*. Lamentablemente *no podré asistir* al Baby Shower de Santiago, pero les envío mucho cariño en esta dulce espera 💛';
-    const url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(txt);
-    const w = window.open(url, '_blank', 'noopener'); if (!w) window.location.href = url;
+    const cantidad = window.RegistroAsistencia.people();
+    const mensaje = txt + (op === 'si' ? '\n👥 Personas: ' + cantidad + ' (incluyéndome).' : '') + '\nMi respuesta ya está registrada en el listado.';
+    const url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(mensaje);
+    window.open(url, '_blank', 'noopener');
   }
   function abrirModal() { modal.hidden = false; error.textContent = ''; }
   function cerrarModal() { modal.hidden = true; }

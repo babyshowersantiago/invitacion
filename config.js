@@ -18,6 +18,9 @@ window.CONFIG = {
     'Ángel': '56942038860',
   },
 
+  // Pega aquí la URL /exec de tu aplicación web de Google Apps Script.
+  REGISTRO_URL: 'https://script.google.com/macros/s/AKfycbzwj8ushZP5cKfVH0TY-NoCN1-UrJb_1iLONgTisvZQFELLerG7j8lHEm7mXdLh_dG1/exec',
+
   // Archivo de calendario (iPhone y computador) con alertas el día del evento y 1 hora antes
   ICS: 'assets/babyshower-santiago.ics',
 };
